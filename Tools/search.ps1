@@ -1,10 +1,10 @@
-$strFilter = ì(&(objectCategory=User)(userAccountControl:1.2.840.113556.1.4.803:=4194304))î
+$strFilter = ‚Äú(&(objectCategory=User)(userAccountControl:1.2.840.113556.1.4.803:=4194304))‚Äù
 $objDomain = New-Object System.DirectoryServices.DirectoryEntry
 $objSearcher = New-Object System.DirectoryServices.DirectorySearcher
 $objSearcher.SearchRoot = $objDomain
 $objSearcher.Filter = $strFilter
-$objSearcher.SearchScope = ìSubtreeî
-$colProplist = ìnameî
+$objSearcher.SearchScope = ‚ÄúSubtree‚Äù
+$colProplist = ‚Äúname‚Äù
 foreach ($I in $colPropList){$objSearcher.PropertiesToLoad.Add($i)}
 $colResults = $objSearcher.FindAll()
 $colResults | Format-Table
